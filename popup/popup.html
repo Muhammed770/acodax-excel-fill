@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Acodax Excel Fill</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon-32.png" alt="" width="24" height="24">
+    <b>Acodax Excel Fill</b>
+  </header>
+  <ol>
+    <li>Open <b>Add Purchase Invoice</b> or <b>Add Stock Transfer</b> in Acodax.</li>
+    <li>Fill the supplier, date and other header fields.</li>
+    <li>Click <b>Excel Fill</b> (bottom right) and load your sheet, or paste the rows.</li>
+    <li>Press <b>Start filling</b>, check the lines, then press <b>Save</b> yourself.</li>
+  </ol>
+  <p class="hint">Sheet layout: column A = barcode, column B = quantity. An empty quantity counts as 1.</p>
+  <div class="buttons">
+    <button id="open" class="primary">Open panel on this page</button>
+    <button id="sample">Download sample sheet</button>
+  </div>
+  <p id="status" class="status"></p>
+  <footer>Developed by <a href="https://github.com/muhammed770/" target="_blank" rel="noopener">muhammedv</a></footer>
+  <script src="../vendor/xlsx.full.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

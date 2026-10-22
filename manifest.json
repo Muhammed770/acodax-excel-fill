@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Acodax Excel Fill",
+  "short_name": "Excel Fill",
+  "version": "1.0.1",
+  "description": "Fills Acodax Purchase Invoice and Stock Transfer item lines (barcode + quantity) from an Excel sheet or pasted rows.",
+  "author": "muhammedv",
+  "homepage_url": "https://github.com/muhammed770/",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Acodax Excel Fill",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.acodax.com/erp/*",
+        "https://*.axisproerp.com/erp/*",
+        "http://localhost/erp/*",
+        "http://acodax.local/erp/*"
+      ],
+      "js": [
+        "vendor/xlsx.full.min.js",
+        "content/parse.js",
+        "content/filler.js",
+        "content/panel.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
